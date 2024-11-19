@@ -33,12 +33,12 @@ KPM is a collaborative project management platform developed to help five key te
 - MySQL  
 - HTML5, CSS3
 
-## Project List View
+## Project List View (All Dummy Data)
 
 ![Screenshot 2024-11-19 at 1 03 33 AM](https://github.com/user-attachments/assets/045fd19e-74cd-4272-88f6-1a636bc01d68)
 
 
-## Task Status Board View
+## Task Status Board View (All Dummy Data)
     
 ![Screenshot 2024-11-19 at 1 04 57 AM](https://github.com/user-attachments/assets/90982151-b229-474e-928f-ca2d409940ab)
 
