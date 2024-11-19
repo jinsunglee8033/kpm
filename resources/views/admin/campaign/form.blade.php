@@ -23,10 +23,10 @@
         $third = 'Create Project';
     }
 
-    ?> 
+    ?>
 
 {{--    <link href="https://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet">--}}
-{{--    <script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=6k40mnsmx70j0s3xt18143p5x2tq53p5d0kftr23w7kntoec"></script>--}}
+{{--    <script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey="></script>--}}
 {{--    <script src="https://code.jquery.com/ui/1.10.2/jquery-ui.js" ></script>--}}
 {{--    <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>--}}
 
@@ -373,7 +373,7 @@
                                                         $open_link = 'open_download';
                                                 ?>
                                                          <?php $attachment_link = env('AWS_BUCKET_HOST').env('AWS_BUCKET').$attachment['attachment']; ?>
-                                                          
+
 
                                                     <div class="attachment_wrapper">
                                                         <?php $name = explode('/', $attachment['attachment']); ?>
@@ -381,8 +381,8 @@
                                                         <?php $date = date('m/d/Y g:ia', strtotime($attachment['date_created'])); ?>
                                                             <div class="attachement">{{ $attachment_link  }}</div>
 
-                                                             
-                                                           <?php 
+
+                                                           <?php
                                                                         $file_download_url = Storage::temporaryUrl( ltrim($attachment['attachment'],'/'), now()->addMinutes(60),
                                                                             [
                                                                                 'ResponseContentType' => 'application/octet-stream',
@@ -390,7 +390,7 @@
                                                                             ]
                                                                         );
                                                             ?>
-                                                            
+
                                                             <a onclick="remove_file($(this))"
                                                                 class="delete attachement close"
                                                                 title="Delete"
@@ -417,7 +417,7 @@
                                             <?php endforeach; ?>
                                         <?php endif; ?>
 
-                                          
+
 
                                         <div class="form-group">
                                             <label>Upload Visual References: <b style="color: #b91d19">(20MB Max)</b></label>
@@ -878,7 +878,7 @@
     <?php if (!empty($attach_files)): ?>
         <?php foreach ($attach_files as $attachment): ?>
             <?php $attachment_link = env('AWS_BUCKET_HOST').env('AWS_BUCKET').$attachment['attachment']; ?>
-            <?php 
+            <?php
                          $file_download_url = Storage::temporaryUrl( ltrim($attachment['attachment'],'/'), now()->addMinutes(5),
                             [
                                 'ResponseContentType' => 'application/octet-stream',
@@ -940,7 +940,7 @@
             $('#arrow-'+asset_id).addClass('fa-angle-up');
         }
     </script>
-       
+
 
     <script>
 

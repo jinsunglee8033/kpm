@@ -1,9 +1,9 @@
 @extends('layouts.dashboard')
 
-@section('content') 
+@section('content')
 
 {{--    <link href="https://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet">--}}
-{{--    <script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=6k40mnsmx70j0s3xt18143p5x2tq53p5d0kftr23w7kntoec"></script>--}}
+{{--    <script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey="></script>--}}
 {{--    <script src="https://code.jquery.com/ui/1.10.2/jquery-ui.js" ></script>--}}
 {{--    <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>--}}
 
@@ -156,10 +156,10 @@
                                                 {{ $message }}
                                             </div>
                                             @enderror
-                                        </div> 
-                                        <?php $array = array('copy_to_do', 'copy_in_progress', 'copy_review', 'copy_done'); 
+                                        </div>
+                                        <?php $array = array('copy_to_do', 'copy_in_progress', 'copy_review', 'copy_done');
                                         if(Route::current()->getName()!="copy.create" && in_array($copy_status, $array)){ ?>
-                                              
+
                                         <div class="form-group">
                                             <label>Copy Submission From Copywriter:</label>
                                             <textarea name="copy_submission" style="height:250px;background-color:#e3fdf4;" class="form-control @error('copy_submission') is-invalid @enderror @if (!$errors->has('copy_submission') && old('copy_submission')) is-valid @endif">{{ old('copy_submission', !empty($copy) ? $copy->copy_submission : '') }}</textarea>
@@ -202,7 +202,7 @@
                                             <?php $date = date('m/d/Y g:ia', strtotime($attachment['date_created'])); ?>
                                             <div class="attachement">{{ $name }}</div>
 
-                                            <?php 
+                                            <?php
                                                                         $file_download_url = Storage::temporaryUrl( ltrim($attachment['attachment'],'/'), now()->addMinutes(60),
                                                                             [
                                                                                 'ResponseContentType' => 'application/octet-stream',
@@ -251,8 +251,8 @@
                                             @enderror
                                         </div>
 
-                                        
-                                       
+
+
                                     </div>
 
                                 </div>
@@ -293,17 +293,17 @@
 
 
 
-                            </div> 
+                            </div>
 
                         </form>
 
-                    @if((!empty($copy)) && (auth()->user()->id == $copy->request_by) && $copy_status=="copy_review")                    
+                    @if((!empty($copy)) && (auth()->user()->id == $copy->request_by) && $copy_status=="copy_review")
                         <div class="card">
                             <div class="card-body">
                                 <div class="form-group">
                                     <label>Decline Reason From Ticket Owner:</label>
                                     <textarea id="declineReason" class="form-control" name="decline_reason" style="height:100px;"></textarea>
-                                </div>        
+                                </div>
                             </div>
                             <div class="card-footer text-right pt-0" >
                             <button class="btn btn-danger"
@@ -321,7 +321,7 @@
                                 <div class="form-group">
                                     <label>Decline Reason From Copy Team:</label>
                                     <textarea id="declineReason" class="form-control" name="decline_reason" style="height:100px;"></textarea>
-                                </div>        
+                                </div>
                             </div>
                             <div class="card-footer text-right pt-0" >
                             <button class="btn btn-danger"
@@ -363,7 +363,7 @@
                                 </div>
                             </form>
                         </div>
-                        
+
 
                     @endif
                 </div>
@@ -450,14 +450,14 @@
     <?php if (!empty($attach_files)): ?>
     <?php foreach ($attach_files as $attachment): ?>
         <?php $attachment_link = env('AWS_BUCKET_HOST').env('AWS_BUCKET').$attachment['attachment']; ?>
-            <?php 
+            <?php
                          $file_download_url = Storage::temporaryUrl( ltrim($attachment['attachment'],'/'), now()->addMinutes(5),
                             [
                                 'ResponseContentType' => 'application/octet-stream',
                                 'ResponseContentDisposition' => 'attachment;',
                             ]
                         );
-            ?>    
+            ?>
     <div class="modal fade"
          id="exampleModal_<?php echo $attachment['attachment_id']; ?>"
          tabindex="-1"
@@ -524,10 +524,10 @@
                     success: function(response) {
                         if(response == 'success'){
                             $(el).parent().remove();
-                            
+
                         }else{
                             alert(response);
-                            
+
                         }
                     },
                 })
@@ -641,9 +641,9 @@
         }
 
         function copy_work_decline(el){
-            <?php if (auth()->user()->role == 'copywriter manager'){ 
+            <?php if (auth()->user()->role == 'copywriter manager'){
                 $confirm_text = "this request?";
-                }else{ 
+                }else{
                     $confirm_text="the copy?";
             } ?>
             if (confirm("Are you sure you want to decline <?php echo $confirm_text; ?>") == true) {
@@ -652,7 +652,7 @@
                         id:declineId,
                         decline_reason:$("#declineReason").val()
                     }
-                    
+
                 $.ajax({
                     headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                     url: "<?php echo url('/admin/copy/copy_decline'); ?>"+"/"+declineId,
@@ -674,7 +674,7 @@
                     }
                 })
             }
-        }       
+        }
 
     </script>
 
