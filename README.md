@@ -1,23 +1,33 @@
-## About Laravel8-Starter-App
+# KPM (Kiss Project Manager)
+**Role**: Lead Developer
 
-Laravel8-Starter-App is a boilerplate project based on Laravel 8 Framework that you can start your project with.
+## Overview
+KPM is a collaborative project management platform developed to help five key teams (Design, Copy, Marketing, E-commerce, and Operations) efficiently manage tasks, share updates, and track progress. With over 100 employees using the platform, KPM enables streamlined communication and task management, ensuring smooth workflows across diverse departments.
 
-### Installation
-- Open terminal and clone the repo : `git clone git@github.com:jinsunglee8033/kpm.git`
-- Go to the project directory and copy the `env.example` as `.env` file
-- Update the `.env` file as you need. Especially the database config
-- Run `composer install`
-- Run `php artisan db:seed` and follow the instructions (just answer some simple questions). You will see the admin email for login at the end of this process. The default password is `password`
-- Run `php artisan key:generate`
-- Run `php artisan serve`
-- Open the browser and type `http://localhost:8000`
+## Key Achievements
+- **Efficiency Boost**: Increased operational efficiency by providing a centralized platform for cross-functional teams, reducing task management overhead.  
+- **Intuitive Task Tracking**: The platform clearly highlights stalled tasks, helping teams quickly identify blockers and keep workflows moving.  
+- **Timely Notifications**: Automated reminders and notifications are sent at key stages of the workflow, preventing delays and ensuring tasks are completed on time.  
 
-### Reference Tutorials
+## Responsibilities
+- Led the project from initial system design to final development, overseeing all technical aspects of the platform.  
+- Customized the platform for each team’s unique needs, ensuring that each department could track, manage, and collaborate on tasks effectively.  
+- Integrated automated notification systems to reduce delays and improve accountability across teams.
 
-- **[Laravel 8 Auth with Boostrap UI](https://www.youtube.com/watch?v=NuGBzmHlINQ)**
-- **[Laravel Permission using UUID by Spatie](https://spatie.be/docs/laravel-permission/v3/advanced-usage/uuid)**
-- **[Easy Setup Laravel Permission Tutorial](https://www.qcode.in/easy-roles-and-permissions-in-laravel-5-4/)**
+## Technologies
+- **Backend**: PHP, Laravel (8), MySQL  
+- **Frontend**: JavaScript, Bootstrap, jQuery, HTML5, CSS3  
+- **Architecture**: MVC  
 
-## License
+## Outcome
+- Recognized for improving team collaboration, reducing task delays, and increasing overall productivity.  
+- Currently responsible for continuous system enhancements and maintenance.
 
-The Laravel8-Starter-App is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+### Tools Used  
+- PHP 8  
+- Laravel 8  
+- JavaScript, Bootstrap, jQuery  
+- MySQL  
+- HTML5, CSS3
